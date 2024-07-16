@@ -16,7 +16,7 @@ class _WeatherPageState extends State<WeatherPage> {
   //api key
   final _weatherService=WeatherService("1404b0621a46174885d2b5c2b8a3a0de");
   Weather? _weather;
-  
+
   //fetch weather
   _fetchweather()async{
     //get the current city
@@ -35,7 +35,7 @@ class _WeatherPageState extends State<WeatherPage> {
       log(e.toString());
     }
   }
-  
+
   //weather animation
   String getWeatherAnimation(String? mainCondition){
     if(mainCondition==null) return 'assets/sunny.json';  //default
@@ -97,7 +97,7 @@ class _WeatherPageState extends State<WeatherPage> {
             ),
 
             //temperatur
-            Text('${_weather?.temperature.round()}°C',style: const TextStyle(fontSize: 28,fontWeight: FontWeight.w600),),
+            Text('${_weather?.temperature.round()??"Loading.."}°C',style: const TextStyle(fontSize: 28,fontWeight: FontWeight.w600),),
 
           ],
         ),

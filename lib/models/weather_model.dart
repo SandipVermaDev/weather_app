@@ -11,7 +11,7 @@ class Weather {
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
         cityName: json['name'],
-        temperature: json['main']['temp'].toDouble(),
+        temperature: json['main']['temp'].toDouble()-273.15, //convert kelvin to celsius
         mainCondition: json['weather'][0]['main']);
   }
 }
